@@ -21,10 +21,9 @@ import java.util.Date;
 @Component
 public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
-    private final AuthenticationManager authenticationManager;
+    private AuthenticationManager authenticationManager;
 
-    public JwtAuthenticationFilter(AuthenticationManager authenticationManager) {
-        this.authenticationManager = authenticationManager;
+    public JwtAuthenticationFilter() {
     }
 
     @Override
@@ -50,5 +49,10 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                 )
                 .sign(algorithm);
         response.setHeader("Authorization", "Bearer " + jwtAccessToken);
+    }
+
+    @Override
+    public void setAuthenticationManager(AuthenticationManager authenticationManager) {
+        this.authenticationManager = authenticationManager;
     }
 }

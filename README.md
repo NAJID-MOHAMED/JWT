@@ -15,6 +15,7 @@ This is a demo project that demonstrates how to use JWT (JSON Web Token) for aut
 
 ## Technologies Used
 
+
 *   **Backend:**
     *   [Spring Boot](https://spring.io/projects/spring-boot) - Framework for building Java-based enterprise applications.
     *   [Spring Security](https://spring.io/projects/spring-security) - For authentication and access control.
